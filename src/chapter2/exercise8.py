@@ -8,7 +8,7 @@ n = int(input("Enter the number of times interest is compounded n:"))
 # t is the number of years until maturation
 t = int(input("enter the years until maturation t: "))
 # p is the final amount got after  investmentss
-p = C*(1+(r/n))**(n*t)
+p = C * (1 + (r/n)) ** (t * n)
 # answer rounded to the nearest penny
 answer = round(p, 2)
 print(answer)
