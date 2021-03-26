@@ -12,4 +12,4 @@ p = C*(1+(r/n))**(n*t)
 # answer rounded to the nearest penny
 answer = round(p, 2)
 print(answer)
-# coded by group3BSE1
+# coded by group3BSE1 copyright 2021
