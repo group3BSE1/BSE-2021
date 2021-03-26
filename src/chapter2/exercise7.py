@@ -14,42 +14,42 @@ penny = 0.01
 # computing change
 # calculating the twenties
 twenties = int(amount // twenty_dollars)
-print(twenties)
+print(str(twenties) + "  twenties")
 # getting remainder of the twenties
 remainder_of_twenties = (amount % twenty_dollars)
 # calculating the tens
 tens = int(remainder_of_twenties // ten_dollars)
-print(tens)
+print(str(tens) + "  ten")
 # getting reminder of the tens
 remainder_of_tens = (remainder_of_twenties % ten_dollars)
 # calculating the fives
 fives =int(remainder_of_tens // five_dollars)
-print(fives)
+print(str(fives) + "  five")
 # getting remainder of fives
 remainder_of_fives = (remainder_of_tens % five_dollars)
 # calculating the ones
 ones = int(remainder_of_fives // one_dollars)
-print(ones)
+print(str(ones) + "  ones")
 # getting remainder of ones
 remainder_of_ones = (remainder_of_fives % one_dollars)
 # calculating quarters
 quarters = int(remainder_of_ones // quarter)
-print(quarters)
+print(str(quarters) + "  quarters")
 # getting remainder of quarters
 remainder_of_quarters = (remainder_of_ones % quarter)
 # calculating dimes
 dimes = int(remainder_of_quarters // dime)
-print(dimes)
+print(str(dimes) + "  dimes")
 # getting remainder of dimes
 remainder_of_dimes = (remainder_of_quarters % dime)
 # calculating nickel
 nickels = int(remainder_of_dimes // nickel)
-print(nickels)
+print(str(nickels) + "  nickels")
 # getting remainder of nickels
 remainder_of_nickels = (remainder_of_dimes % nickel)
 # calculating pennies
 pennies = int(remainder_of_nickels // penny)
-print(pennies)
-# codded by group3BSE1
+print(str(pennies) + "  pennies")
+# coded by group3BSE1
 
 
