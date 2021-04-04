@@ -5,7 +5,7 @@ kla = "No way"
 spac = 'Space'
 mbra = 'Mbarara'
 kamp = "Kampala"
-# Prompting for location from user
+# Prompting location from user
 location = input("Location:")
 # Prompting pay from a user
 pay = input("Pay:")
