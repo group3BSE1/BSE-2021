@@ -6,6 +6,6 @@ if hours <= 40:
     pay = (hours * rate)
     print(pay)
 else:
-    pay2 = ((extrah * 1.5 * rate) + (hours * rate))
+    pay2 = ((extrah * 1.5 * rate) + (40 * rate))
     print(pay2)
 # group3BSE1
