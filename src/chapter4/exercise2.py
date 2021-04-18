@@ -4,11 +4,20 @@ def investment(initial, rate, time, number):
 
 
 # assigning parameters
-C = int(input("Enter initial amount of investment: "))
-r = float(input("Enter yearly rate: "))
-t = int(input("Enter time until maturation: "))
-n = int(input("Enter number of times interest is compounded : "))
+C = input("Enter initial amount of investment: ")
+r = input("Enter yearly rate: ")
+t = input("Enter time until maturation: ")
+n = input("Enter number of times interest is compounded: ")
 p = investment(C, r, t, n)
+try:
+    C = int(C)
+    r = float(r)
+    t = int(t)
+    n = int(n)
+except:
+    print('Please Enter Numeric Character:')
+    exit()
+
 print(p)
 # coded by group3BSE
 
