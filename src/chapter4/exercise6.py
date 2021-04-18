@@ -12,6 +12,7 @@ try:
     rte = float(rte)
 except:
     print("Error")
+    exit()
 print(computepay(hrs, rte))
 # hours and rate are parameters
 
