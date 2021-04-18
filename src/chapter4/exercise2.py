@@ -4,10 +4,10 @@ def investment(initial, rate, time, number):
 
 
 # assigning parameters
-C = input("Enter initial amount of investment: ")
-r = input("Enter yearly rate: ")
-t = input("Enter time until maturation: ")
-n = input("Enter number of times interest is compounded: ")
+C = input("Enter initial amount of investment:")
+r = input("Enter yearly rate:")
+t = input("Enter time until maturation:")
+n = input("Enter number of times interest is compounded:")
 p = investment(C, r, t, n)
 try:
     C = int(C)
