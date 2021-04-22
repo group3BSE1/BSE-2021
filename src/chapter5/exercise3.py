@@ -25,7 +25,7 @@ while True:
         # for multiple remainder = 0
         remainder = amount % 5
         if remainder == 0 and price > 0:
-            print('Menu for deposits\n')
+            print('Menu for deposits:\n')
             print(' "n" - deposit a nickel ')
             print(' "d" - deposit a dime ')
             print(' "q" - deposit a quarter ')
