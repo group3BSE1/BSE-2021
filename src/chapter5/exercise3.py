@@ -1,5 +1,5 @@
 # 22nd April 2021
-#GROUP 3
+# GROUP 3
 # DAN KABAGAMBE
 # TUMUSIIME FRANCIS
 # NAKUYA SHAKIRAH HADIJJAH
@@ -25,7 +25,13 @@ while True:
         # for multiple remainder = 0
         remainder = amount % 5
         if remainder == 0 and price > 0:
-            print(price)
+            print('Menu for deposits\n')
+            print(' "n" - deposit a nickel ')
+            print(' "d" - deposit a dime ')
+            print(' "q" - deposit a quarter ')
+            print(' "o" - deposit a one dollar bill')
+            print(' "f" - deposit a five dollar bill ')
+            print(' "c" - cancel the purchase ')
         else:
             print('Illegal selection: Must be a non negative multiple of 5 cents')
         continue
