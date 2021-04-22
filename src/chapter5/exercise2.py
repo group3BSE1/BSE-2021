@@ -1,7 +1,11 @@
+# DAN KABAGAMBE
+# TUMUSIIME FRANCIS
+# NAKUYA SHAKIRAH HADIJJAH
 total = 0
 count = 0
 smallest = None
 largest = None
+# Finding the largest and smallest
 while True:
     a = input('Enter a number:')
     try:
