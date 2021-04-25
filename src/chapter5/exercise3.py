@@ -8,6 +8,8 @@ dime = 25
 quarter = 25
 one = 0
 five = 0
+print('Welcome to vending machine change maker program')
+print('Stock contains:\n')
 print(nickel, "nickels")
 print(dime, "dimes")
 print(quarter, "quarters")
@@ -17,6 +19,7 @@ print(five, "fives")
 while True:
     price = input("Enter the purchase price (xx.xx) or `q' to quit:")
     if price == 'q':
+        # will print here total before exiting!
         quit()
     else:
         # checking the value input from the user
@@ -50,7 +53,7 @@ while True:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
                         continue
                     else:
-                        print('Take change')
+                        change = payment - amount
                         break
                 if deposit == 'd':
                     while True:
@@ -75,7 +78,7 @@ while True:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
                         continue
                     else:
-                        print('Take the change')
+                        change = payment - amount
                 if deposit == 'o':
                     while True:
                         payment = payment + 100
@@ -87,7 +90,7 @@ while True:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
                         continue
                     else:
-                        print('Take change')
+                        change = payment - amount
                         break
                 if deposit == 'f':
                     while True:
@@ -100,11 +103,11 @@ while True:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
                         continue
                     else:
-                        print('Take change')
+                        change = payment - amount
                         break
                 if deposit == 'c':
                     if payment > 0:
-                        print('Please take the change below')
+                        change =payment
                         break
                     else:
                         continue
@@ -112,7 +115,270 @@ while True:
                     print('Invalid')
                     continue
             # we shall calculate the change here
+            print('Please take the change below')
+            def q_cf():
+                print(q_c, 'quarters')
 
+
+            def d_cf():
+                print(d_c, 'dimes')
+
+
+            def n_cf():
+                print(n_c, 'nickels')
+
+
+            def bal_due():
+                print('Machine is out of change')
+                if change >= 100:
+                    b_d = change // 100
+                    c_d = change % 100
+                    if c_d > 0:
+                        print('See store manager for remaining refund.Amount due is', b_d, 'dollars and', c_d, 'cents')
+                    else:
+                        print('See store manager for remaining refund.Amount due is', b_d, 'dollars')
+                else:
+                    print('See store manager for remaining refund.Amount due is', change, 'cents')
+            q_c = change//25
+
+
+            if q_c > 0:
+                if q_c <= quarter:
+                    q_cf()
+                    change = change - q_c * 25
+                    d_c = change // 10
+                    quarter = quarter
+                    if d_c > 0:
+                        if d_c <= dime:
+                            d_cf()
+                            dime = dime - d_c
+                            change = change - d_c * 10
+                        else:
+                            if dime > 0:
+                                print(dime, 'dimes')
+                                change = change - dime * 10
+                                n_c = change // 5
+                                dime = dime
+                                if n_c > 0:
+                                    if n_c <= nickel:
+                                        n_cf()
+                                else:
+                                    if nickel > 0:
+                                        print(nickel, 'nickels')
+                                        nickel = nickel
+                                        change = change - nickel * 5
+                                        n_c = change // 5
+                                        if n_c > 0:
+                                            bal_due()
+                                            change = 0
+                                    else:
+                                        bal_due()
+                            else:
+                                n_c = change // 5
+                                if n_c > 0:
+                                    if n_c < nickel:
+                                        n_cf()
+                                    else:
+                                        if nickel > 0:
+                                            print(nickel, 'nickels')
+                                            change = change - nickel * 5
+                                            nickel = nickel
+                                            if n_c > 0:
+                                                bal_due()
+                                        else:
+                                            bal_due()
+                                else:
+                                    print('Is it here')
+                                    bal_due()
+                    else:  # calculating only nickes
+                        n_c = change // 5
+                        if n_c > 0:
+                            if n_c < nickel:
+                                n_cf()
+                            else:
+                                if nickel > 0:
+                                    print(nickel, 'nickels')
+                                    change = change - nickel * 5
+                                    n_c = change // 5
+                                    nickel = nickel
+                                    if n_c > 0:
+                                        bal_due()
+                                        change = 0
+                                else:
+                                    bal_due()
+                                    change = 0
+
+                else:
+                    if quarter > 0:
+                        print(quarter, 'quarters')
+                        change = change - quarter * 25
+                        d_c = change // 10
+                        quarter = quarter
+                        if d_c > 0:
+                            if d_c <= dime:
+                                d_cf()
+                                dime = dime - d_c
+                                change = change - d_c * 10
+                                n_c = change // 5
+                                if n_c > 0:
+                                    if n_c < nickel:
+                                        print(n_c, 'nickels')
+                                    else:
+                                        if nickel > 0:
+                                            print(nickel, 'nickels')
+                                            change = change - nickel * 5
+                                            n_c = change // 0
+                                            nickel = nickel
+                                            if n_c > 0:
+                                                bal_due()
+                                                change = 0
+                                        else:
+                                            bal_due()
+                                            change = 0
+                            else:
+                                if dime > 0:
+                                    print(dime, 'dimes')
+                                    change = change - dime * 10
+                                    n_c = change // 5
+                                    dime = dime
+                                    if n_c <= nickel:
+                                        n_cf()
+                                    else:
+                                        if nickel > 0:
+                                            print(nickel, 'nickels')
+                                            change = change - nickel * 5
+                                            n_c = change // 5
+                                            nickel = nickel
+                                            if n_c > 0:
+                                                bal_due()
+                                        else:
+                                            bal_due()
+                                else:
+                                    n_c = change // 5
+                                    if n_c > 0:
+                                        if n_c < nickel:
+                                            n_cf()
+                                        else:
+                                            if nickel > 0:
+                                                print(nickel, 'nickels')
+                                                change = change - nickel * 5
+                                                n_c = change // 5
+                                                nickel = nickel
+                                                if n_c > 0:
+                                                    bal_due()
+                                            else:
+                                                bal_due()
+
+                        else:
+                            n_c = change // 5
+                            print('Not easy as u think')
+                    else:
+                        print('Lost here')
+                        d_c = change // 10
+                        if d_c > 0:
+                            if d_c <= dime:
+                                d_cf()
+                            else:
+                                if dime > 0:
+                                    print(dime, 'dimes')
+                                    change = change - dime * 10
+                                    n_c = change // 5
+                                    dime = dime
+                                    if n_c > 0:
+                                        if n_c < nickel:
+                                            print(nickel, 'nickels')
+                                            change = change - nickel * 5
+                                            nickel = nickel
+                                            n_c = change // 5
+                                            if n_c > 0:
+                                                bal_due()
+                                                change = 0
+                                        else:
+                                            if nickel > 0:
+                                                print(nickel, 'nickels')
+                                                change = change - nickel * 5
+                                                n_c = change // change
+                                                nickel = nickel
+                                                if n_c > 0:
+                                                    bal_due()
+                                                    change = 0
+                                            else:
+                                                bal_due()
+                                                change = 0
+
+                                else:
+                                    n_c = change // 5
+                                    if n_c > 0:
+                                        if n_c < nickel and nickel > 0:
+                                            n_cf()
+                                        elif nickel > 0:
+                                            print(nickel, 'nickels')
+                                            change = change - nickel * 5
+                                            nickel = nickel
+                                            n_c = change // 5
+                                            if n_c > 0:
+                                                bal_due()
+                                                change = 0
+                                        else:
+                                            bal_due()
+            else:
+                d_c = change // 10
+                if d_c > 0:
+                    if d_c <= dime:
+                        print(d_c, 'dimes')
+                        dime = dime - d_c
+                        change = change - d_c * 10
+                        n_c = change // 5
+                        if n_c > 0:
+                            if n_c <= nickel:
+                                print(n_c, 'nickels')
+                                change = change - n_c * 5
+                                nickel = nickel - n_c
+                                n_c = change // 5
+                                print(n_c)
+                                if n_c > 0:
+                                    bal_due()
+                                    change = 0
+                            else:
+                                bal_due()
+                                change = 0
+                    else:
+                        print(dime, 'dimes')
+                        change = change - dime * 10
+                        n_c = change // 5
+                        dime = dime
+                        if n_c > 0:
+                            if n_c <= nickel:
+                                n_cf()
+                            else:
+                                if nickel > 0:
+                                    print(nickel, 'nickels')
+                                    change = change - nickel * 5
+                                    nickel = nickel
+                                    n_c = change // 5
+                                    if n_c > 0:
+                                        bal_due()
+                                        change = 0
+                                else:
+                                    bal_due()
+                else:
+                    n_c = change // 5
+                    if n_c > 0:
+                        if n_c <= nickel:
+                            n_cf()
+                        else:
+                            if nickel > 0:
+                                print(nickel, 'nickels')
+                                change = change - nickel * 10
+                                n_c = change // 5
+                                nickel = nickel
+                                if n_c > 0:
+                                    bal_due()
+                                    change = 0
+                            else:
+                                bal_due()
+                                change = 0
+            # this stock will be printed at end of every transaction
         else:
             print('Illegal selection: Must be a non negative multiple of 5 cents')
         continue
