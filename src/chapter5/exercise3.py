@@ -21,7 +21,7 @@ while True:
     else:
         # checking the value input from the user
         price = float(price)
-        amount = price * 100
+        amount = int(price * 100)
         # for multiple remainder = 0
         remainder = amount % 5
         if remainder == 0 and price > 0:
@@ -32,8 +32,8 @@ while True:
             print(' "o" - deposit a one dollar bill')
             print(' "f" - deposit a five dollar bill ')
             print(' "c" - cancel the purchase ')
-            dollars = amount // 100
-            cent_s = amount % 100
+            dollars = int(amount // 100)
+            cent_s = int(amount % 100)
             print('Amount due:',dollars,' dollars and ', cent_s,' cents')
             payment = 0
             # Getting the selection from user
@@ -43,6 +43,8 @@ while True:
                     while True:
                         payment = payment + 5
                         amount_due = amount - payment
+                        # updating nickels
+                        nickel = nickel + 1
                         break
                     if payment < amount:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
@@ -54,6 +56,8 @@ while True:
                     while True:
                         payment = payment + 10
                         amount_due = amount - payment
+                        # updating dimes
+                        dime = dime + 1
                         break
                     if payment < amount:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
@@ -64,6 +68,8 @@ while True:
                     while True:
                         payment = payment + 25
                         amount_due = amount - payment
+                        # updating quarters
+                        quarter = quarter + 1
                         break
                     if payment < amount:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
@@ -74,6 +80,8 @@ while True:
                     while True:
                         payment = payment + 100
                         amount_due = amount - payment
+                        # updating ones
+                        one = one + 1
                         break
                     if payment < amount:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
@@ -85,6 +93,8 @@ while True:
                     while True:
                         payment = payment + 500
                         amount_due = amount - payment
+                        # updating fives
+                        five = five + 1
                         break
                     if payment < amount:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
@@ -97,10 +107,11 @@ while True:
                         print('Please take the change below')
                         break
                     else:
-                        break
+                        continue
                 else:
                     print('Invalid')
                     continue
+            # we shall calculate the change here
 
         else:
             print('Illegal selection: Must be a non negative multiple of 5 cents')
