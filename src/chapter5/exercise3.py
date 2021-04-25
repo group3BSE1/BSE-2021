@@ -54,6 +54,7 @@ while True:
                         continue
                     else:
                         change = payment - amount
+                        print('Change to be dispensed is',change,'cents')
                         break
                 if deposit == 'd':
                     while True:
@@ -66,6 +67,8 @@ while True:
                         print(amount_due//100,'dollars and' ,amount_due % 100, 'cents')
                         continue
                     else:
+                        change = payment - amount
+                        print('Change to be dispensed is', change,'cents')
                         break
                 if deposit == 'q':
                     while True:
@@ -79,6 +82,7 @@ while True:
                         continue
                     else:
                         change = payment - amount
+                        print('Change to be dispensed is', change,'cents')
                 if deposit == 'o':
                     while True:
                         payment = payment + 100
@@ -91,6 +95,7 @@ while True:
                         continue
                     else:
                         change = payment - amount
+                        print('Change to be dispensed is', change,'cents')
                         break
                 if deposit == 'f':
                     while True:
@@ -104,10 +109,12 @@ while True:
                         continue
                     else:
                         change = payment - amount
+                        print('Change to be dispensed is', change,'cents')
                         break
                 if deposit == 'c':
                     if payment > 0:
                         change =payment
+                        print('Change to be dispensed is', change,'cents')
                         break
                     else:
                         continue
