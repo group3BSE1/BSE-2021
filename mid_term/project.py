@@ -1,7 +1,7 @@
 # repeatedly getting customer code
 while True:
     code = input('Enter customer code:')
-    if code == 'r' or code == 'c' or code == 'i':
+    if code == 'r' or code == 'R' or code == 'c' or code == 'C' or code == 'i' or code == 'I':
         # bgn_m is the beginning meter reading
         # end_m is the ending meter reading
         bgn_m = input('Enter beginning meter reading:')
@@ -25,10 +25,10 @@ while True:
             continue
         gallons = (int(end_m2) - int(bgn_m)) / 10
         # calculating bill for code 'r'
-        if code == 'r':
+        if code == 'r' or code == 'R':
             bill = format((5+(0.0005 * gallons)), ".2f")
         # calculating bill for code 'c'
-        elif code == 'c':
+        elif code == 'c' or code == 'C':
             if gallons <= 4000000:
                 bill = format(1000, ".2f")
             else:
