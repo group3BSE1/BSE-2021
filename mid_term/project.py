@@ -43,7 +43,7 @@ while True:
             else:
                 exceeded_g = gallons - 10000000
                 bill = format(((0.00025 * exceeded_g) + 2000), ".2f")
-
+        # displaying customer information
         print("Customer code: ", code)
         print('Beginning meter reading: ', bgn_m)
         print('Ending meter reading: ', int(end_m))
