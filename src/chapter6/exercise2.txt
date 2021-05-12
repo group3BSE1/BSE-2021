@@ -1,0 +1,7 @@
+Exercise 2: Given that fruit is a string, what does fruit[:] mean?
+Considering;
+fruit = 'banana'
+print(fruit[:])
+This will output banana
+Meaning
+fruit[:] is from the first index up to the last index so it gives the whole string stored in the fruit variable
