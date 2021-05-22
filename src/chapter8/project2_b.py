@@ -45,6 +45,10 @@ def process_file(file_object):
             percentages.append(int(percent_no))
             max_country = str(max(percentages))
             min_country = str(min(percentages))
+    # catching an error when the year is not found in  the file i.e when list_criteria is empty
+    if len(list_criteria) < 1:
+        print('Error: The year does not match any record!')
+        quit()
     list_max_countries_nw = []
     list_min_countries_nw = []
     for line in list_criteria:
@@ -67,12 +71,13 @@ def process_file(file_object):
     country_most = most_frequent_country(list_max_countries_nw)
     countryless = most_frequent_country(list_min_countries_nw)
 
-    
+
     # Displaying a report to the user
+    print('\nA report for the matching criteria')
     print('Count of records: ', count)
     print('Average percentage of children vaccinated: ', format((sum(percentages)/count), ".1f"))
-    print('Maximum percrntage: ', max(percentages), country_most)
-    print('Minimum percentage: ', min(percentages), countryless)
+    print('Maximum percentage: ', max(percentages), ' in', country_most)
+    print('Minimum percentage: ', min(percentages), ' in', countryless)
 
 
 def main():
