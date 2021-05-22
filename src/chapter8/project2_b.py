@@ -1,4 +1,10 @@
+global file_object
+global min_country
+global max_country
+
+
 def open_file():
+    global file_object
     while True:
         # repeatedly prompting for a file name until if its valid
         file_name = input('Enter the file name: ')
@@ -13,7 +19,7 @@ def open_file():
     return file_object
 
 
-def process_file(file_object):
+def process_file(file_object_p):
     # getting user inputs
     global min_country, max_country
     year = input('Enter the year: ')
@@ -34,7 +40,7 @@ def process_file(file_object):
     count = 0
     percentages = []
     list_criteria = []
-    for line in file_object:
+    for line in file_object_p:
         # line[88:93] is the slice having the year and line[51:57] is one having the income level
         if line[88:93].startswith(year) and ilevel in line[51:57]:
             count = count + 1
@@ -71,7 +77,6 @@ def process_file(file_object):
     country_most = most_frequent_country(list_max_countries_nw)
     countryless = most_frequent_country(list_min_countries_nw)
 
-
     # Displaying a report to the user
     print('\nA report for the matching criteria')
     print('Count of records: ', count)
@@ -79,9 +84,12 @@ def process_file(file_object):
     print('Maximum percentage: ', max(percentages), ' in', country_most)
     print('Minimum percentage: ', min(percentages), ' in', countryless)
 
+# a function to invoke the open_file and process_file functions
+
 
 def main():
     process_file(open_file())
+    file_object.close()
 
 
 main()
